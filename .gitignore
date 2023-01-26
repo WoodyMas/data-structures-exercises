@@ -1,0 +1,17 @@
+.DS_Store
+
+# IntelliJ files
+.idea/*
+*.iml
+*.class
+*.iws
+
+# Compiled classes
+out/*
+
+# Gradle
+.gradle/
+build/
+
+# Maven
+target/
