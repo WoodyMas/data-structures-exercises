@@ -1,6 +1,6 @@
 public class LinkedList {
     //// Instance Variables
-    private int value;
+    //    private int value;
     private Node head;
     private Node tail;
     private int length;
