@@ -6,8 +6,6 @@ public class Main {
 
     public static void main(String[] args) {
 
-        LinkedList myLinkedList = new LinkedList(1);
-
 //        myLinkedList.getHead();
 //        myLinkedList.getTail();
 //        myLinkedList.getLength();
@@ -26,11 +24,17 @@ public class Main {
             4
 
         */
+        LinkedList myLinkedList = new LinkedList(4);
+        myLinkedList.append(7);
+        myLinkedList.append(14);
+        myLinkedList.append(24);
+        myLinkedList.append(10);
 
-        myLinkedList.appendNode(2);
+        myLinkedList.getHead();
+        myLinkedList.getTail();
+        myLinkedList.getLength();
+//        myLinkedList.
         myLinkedList.printList();
-//        System.out.println("uhhh");
-//        myLinkedList.printList();
 
     }
 

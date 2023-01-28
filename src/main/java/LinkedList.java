@@ -1,22 +1,25 @@
 public class LinkedList {
-    //// Instance Variables
-    //    private int value;
+
     private Node head;
     private Node tail;
     private int length;
 
-    // CREATE CLASS VARIABLES, NODE CLASS, AND CONSTRUCTOR HERE //
-    public LinkedList(){}
-    public LinkedList(int value){
-//        this.value = value;
-        head = new Node(value);
-        tail = new Node(value);
-        length = 1;
+    class Node {
+        int value;
+        Node next;
+        Node previous;
+
+        Node(int value) {
+            this.value = value;
+        }
     }
 
-
-    //////////////////////////////////////////////////////////////
-
+    public LinkedList(int value) {
+        Node newNode = new Node(value);
+        head = newNode;
+        tail = newNode;
+        length = 1;
+    }
 
     public void printList() {
         Node temp = head;
@@ -46,15 +49,39 @@ public class LinkedList {
         System.out.println("Length: " + length);
     }
 
-    public void appendNode(int value) {
-         Node newNode = new Node(value);
-         if (length == 0) {
-             head = newNode;
-             tail = newNode;
-         } else {
-             tail.next = newNode;
-             tail = newNode;
-         }
-         length++;
+    public void setHead(Node head) {
+        this.head = head;
+    }
+
+    public void setTail(Node tail) {
+        this.tail = tail;
+    }
+
+    public void setLength(int length) {
+        this.length = length;
+    }
+
+
+
+    //// Append & Remove
+    public void append(int value) {
+        Node newNode = new Node(value);
+        if (length == 0) {
+            head = newNode;
+            tail = newNode;
+        } else {
+            tail.next = newNode;
+            tail = newNode;
+        }
+        length++;
+    }
+
+    public void removeLast(Node node) {
+
+        if (length <= 0) {
+            System.out.println("Nothing left to remove");
+        } else {
+
+        }
     }
 }

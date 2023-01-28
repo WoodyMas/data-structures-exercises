@@ -20,21 +20,21 @@ public class LinkedLists {
         length = 1;
     }
 
-    public void append(int value) {
-    // create new Node
-    // add Node to end
-    }
-
-    public void prepend(int value) {
-        // create a new Node
-        // add node to beginning
-    }
-
-    public boolean insert(int index, int value) {
-        // create new Node
-        // insert Node
-        return true;
-    }
+//    public void append(int value) {
+//    // create new Node
+//    // add Node to end
+//    }
+//
+//    public void prepend(int value) {
+//        // create a new Node
+//        // add node to beginning
+//    }
+//
+//    public boolean insert(int index, int value) {
+//        // create new Node
+//        // insert Node
+//        return true;
+//    }
 
 
     public static void main(String[] args) {
