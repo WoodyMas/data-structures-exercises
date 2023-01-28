@@ -4,6 +4,11 @@ public class LinkedLists {
     private Node tail;
     private int length;
 
+//    class Node {
+//        int value;
+//
+//    }
+
     //// Constructor
     public LinkedLists(){};
 
