@@ -25,6 +25,8 @@ public class Main {
 
         */
         LinkedList myLinkedList = new LinkedList(4);
+        LinkedList newLinkedList = new LinkedList(4);
+        newLinkedList.append(2);
         myLinkedList.append(7);
         myLinkedList.append(14);
         myLinkedList.append(24);
@@ -33,8 +35,21 @@ public class Main {
         myLinkedList.getHead();
         myLinkedList.getTail();
         myLinkedList.getLength();
-//        myLinkedList.
+
         myLinkedList.printList();
+
+        System.out.println();
+//        System.out.println(myLinkedList.removeLast());
+        myLinkedList.getHead();
+        myLinkedList.getTail();
+        myLinkedList.getLength();
+        System.out.println();
+        myLinkedList.printList();
+        System.out.println();
+
+        System.out.println(newLinkedList.removeLast().value);
+        System.out.println(newLinkedList.removeLast().value);
+//        System.out.println(newLinkedList.removeLast().value);
 
     }
 

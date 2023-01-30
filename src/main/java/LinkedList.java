@@ -2,6 +2,8 @@ public class LinkedList {
 
     private Node head;
     private Node tail;
+
+    private Node temp;
     private int length;
 
     class Node {
@@ -81,7 +83,31 @@ public class LinkedList {
         if (length <= 0) {
             System.out.println("Nothing left to remove");
         } else {
-
+            System.out.println("TBD");
+            tail.next = null;
+            tail = node;
         }
     }
+
+    public Node removeLast() {
+        if (length == 0) return null;
+        Node temp = head;
+        Node pre = head;
+        while (temp.next != null) {
+            pre = temp;
+            temp = temp.next;
+        }
+//        tail = pre;
+//        tail.next = null;
+        length--;
+        if (length == 0) {
+            head = null;
+            tail = null;
+        }
+        return temp;
+
+    }
+
+
+
 }
