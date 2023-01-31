@@ -19,6 +19,16 @@ public class Main {
         System.out.println("remove last");
 
         prependLinkedList.printList();
+        System.out.println("remove first");
+
+        LinkedList removeFirst = new LinkedList(2);
+        removeFirst.append(1);
+
+        System.out.println(removeFirst.removeFirst().value);
+        System.out.println(removeFirst.removeFirst().value);
+        System.out.println(removeFirst.removeFirst());
+
+
 
 //        myLinkedList.getHead();
 //        myLinkedList.getTail();

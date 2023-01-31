@@ -16,6 +16,8 @@ public class LinkedList {
         }
     }
 
+    public LinkedList(){};
+
     public LinkedList(int value) {
         Node newNode = new Node(value);
         head = newNode;
@@ -119,6 +121,20 @@ public class LinkedList {
         }
         length++;
     }
+
+    public Node removeFirst() {
+//        Node temp = head;
+        if (length == 0) return null;
+            Node temp = head;
+            head = head.next;
+            temp.next = null;
+            length--;
+        if (length == 0) {
+            tail = null;
+        }
+        return temp;
+        }
+
 
 
 }
