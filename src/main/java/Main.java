@@ -219,39 +219,48 @@ public class Main {
 //        testReverse.printList();
 //
 
-        LinkedList newTest = new LinkedList();
-        System.out.println("Test printAllIndex with empty linkedList");
-        newTest.printAllIndex();
+//        LinkedList newTest = new LinkedList();
+//        System.out.println("Test printAllIndex with empty linkedList");
+//        newTest.printAllIndex();
+//
+//        newTest.reverse();
+//
+//        newTest.append(23);
+//        newTest.reverse();
+//        newTest.printAllIndex();
+//
+//        newTest.append(32);
+//        newTest.reverse();
+//        newTest.printAllIndex();
+//
+//        newTest.remove(1);
+//        newTest.remove(0);
+//
+//        newTest.reverse();
+//
+//        newTest.prepend(200);
+//        newTest.printList();
+//        newTest.set(0, 20);
+//        newTest.printList();
+//
+//        newTest.prepend(25);
+//        newTest.append(67);
+//        newTest.append(40);
+//        newTest.insert(3, 44);
+//
+//        newTest.printAllIndex();
+//
+//        newTest.reverse();
+//        newTest.printAllIndex();
 
-        newTest.reverse();
+        DoublyLinkedLists myDLL = new DoublyLinkedLists(7);
+        System.out.println("Let's see myDLL Head, Tail and Length");
+        myDLL.getHeadPrint();
+        myDLL.getTailPrint();
+        myDLL.getLengthPrint();
 
-        newTest.append(23);
-        newTest.reverse();
-        newTest.printAllIndex();
+        myDLL.printListDLL();
 
-        newTest.append(32);
-        newTest.reverse();
-        newTest.printAllIndex();
-
-        newTest.remove(1);
-        newTest.remove(0);
-
-        newTest.reverse();
-
-        newTest.prepend(200);
-        newTest.printList();
-        newTest.set(0, 20);
-        newTest.printList();
-
-        newTest.prepend(25);
-        newTest.append(67);
-        newTest.append(40);
-        newTest.insert(3, 44);
-
-        newTest.printAllIndex();
-
-        newTest.reverse();
-        newTest.printAllIndex();
 
 
     }
