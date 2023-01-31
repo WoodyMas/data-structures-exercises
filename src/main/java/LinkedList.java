@@ -135,6 +135,115 @@ public class LinkedList {
         return temp;
         }
 
+    public Node get(int index) {
+        if (index < 0 || index >= length) return null;
+        Node temp = head;
+        for (int i = 0; i < index; i++) {
+            temp = temp.next;
+        }
+        return temp;
 
+    }
+
+    public boolean set(int index, int value) {
+        Node temp = get(index);
+        if (temp != null) {
+            temp.value = value;
+            return true;
+        } else {
+            System.out.println("A problem occurred. Your specified index may be out of the range of the LinkedList");
+            return false;
+        }
+    }
+
+    public boolean insert(int index, int value) {
+        Node temp = get(index);
+        Node newNode = new Node(value);
+        if (temp != null) {
+            if (index == 0) {
+                prepend(value);
+                return true;
+            }
+            if (index == length) {
+                append(value);
+                return true;
+            }
+            temp = get(index -1);
+            newNode.next = temp.next;
+            temp.next = newNode;
+            length++;
+            return true;
+
+        } else {
+            System.out.printf("%nYou cannot insert at index: %s because it is out of the range of the LinkedList", index);
+            return false;
+        }
+    }
+
+    public Node remove (int index) {
+        if (get(index) == null) {
+            System.out.printf("%nThe index specified: %s is outside of the range of the LinkedList", index);
+            return null;
+        }
+        if (index == 0) return removeFirst();
+        if (index == length-1) return removeLast();
+
+        Node prev = get(index-1);
+        Node temp = prev.next;
+
+        prev.next = temp.next;
+        temp.next = null;
+        length--;
+        return  temp;
+    }
+
+    public void reverse() {
+        if (length != 0) {
+            Node temp = head;
+            head = tail;
+            tail = temp;
+            Node after = temp.next;
+            Node before = null;
+
+            for (int i = 0; i < length; i++) {
+                after = temp.next;
+                temp.next = before;
+                before = temp;
+                temp = after;
+            }
+        } else {
+            System.out.println("You may have tried to reverse an empty LinkedList");
+        }
+
+    }
+
+    public void printReverse() {
+        if (this.length != 0) {
+            int j = length;
+            System.out.printf("%n{");
+            for (int i = this.length-1; i > 0; i--, j--) {
+                System.out.printf("%s (%s), ", this.get(i).value, i);
+            }
+            System.out.printf("%s (%s)}%n", this.get(0).value, (j -1));
+        } else {
+            System.out.println("No LinkedList items to print");
+        }
+    }
+
+    public void printAllIndex() {
+//        System.out.println(this.length + " length");
+        if (this.length != 0) {
+            int j = 0;
+            System.out.printf("{");
+            for (int i = 0; i < this.length-1; i++, j++) {
+                System.out.printf("%s (%s), ", this.get(i).value, i);
+            }
+            System.out.printf("%s (%s)}%n", this.get(length-1).value, j);
+        } else {
+            System.out.println("No LinkedList items to print");
+
+        }
+
+    }
 
 }
