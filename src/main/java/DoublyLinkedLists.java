@@ -63,6 +63,20 @@ public class DoublyLinkedLists {
         }
     }
 
+    public Node remove(int index) {
+        if (!indexCheck(index)) return null;
+        if (index == length-1) return removeLast();
+        if (index == 0) return removeFirst();
+
+        Node temp = get(index);
+        temp.next.prev = temp.prev;
+        temp.prev.next = temp.next;
+        temp.next = null;
+        temp.prev = null;
+        length--;
+        return temp;
+    }
+
     public void append(int value) {
         Node newNode = new Node(value);
         if (length == 0) {

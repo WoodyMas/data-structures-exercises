@@ -351,6 +351,22 @@ public class Main {
         insertDLL.printListDLL();
         System.out.println("value properly inserted between indexes");
 
+        System.out.println("Testing remove insertDLL at index 2");
+        insertDLL.remove(2);
+        insertDLL.printListDLL();
+        System.out.println("Properly removed Last index value");
+
+        System.out.println("Testing remove insertDLL at index 1");
+        insertDLL.append(32);
+        insertDLL.remove(1);
+        insertDLL.printListDLL();
+        System.out.println("Properly removed index 1");
+
+        insertDLL.insert(1, 55);
+        System.out.println("Testing removing first index");
+        insertDLL.remove(0);
+        insertDLL.printListDLL();
+        System.out.println("Properly removeFirst() index");
 
 
 
