@@ -90,6 +90,19 @@ public class DoublyLinkedLists {
             return temp;
     }
 
+    public void prepend(int value) {
+        Node newNode = new Node(value);
+        if (length == 0) {
+            head = newNode;
+            tail = newNode;
+        } else {
+            newNode.next = head;
+            head.prev = newNode;
+            head = newNode;
+        }
+        length++;
+    }
+
     public static void main(String[] args) {
         System.out.println("""
                 a single linkedList Node can be compared to a hashmap, whereas a doubly linked list Node contains a previous pointer not just next

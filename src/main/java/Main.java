@@ -274,7 +274,18 @@ public class Main {
         System.out.println();
         appendDLL.printListDLL();
 
-        System.out.println(nullDLL.removeLast());
+//        System.out.println(nullDLL.removeLast());
+        nullDLL.prepend(3);
+        appendDLL.prepend(17);
+
+        nullDLL.printListDLL();
+        System.out.println();
+        appendDLL.printListDLL();
+
+        nullDLL.removeLast();
+        nullDLL.printListDLL();
+
+        System.out.println("End of Prepend test");
 
 
     }
