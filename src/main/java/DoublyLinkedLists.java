@@ -155,6 +155,28 @@ public class DoublyLinkedLists {
         }
     }
 
+    public Node set(int index, int value) {
+        if (!indexCheck(index)) {
+            System.out.println("The index specified is outside the range of the DLL");
+            return null;
+        } else {
+            Node temp = get(index);
+            temp.value = value;
+            return temp;
+        }
+
+    }
+
+    public boolean boolSet(int index, int value) {
+        Node temp = get(index);
+        if (temp != null) {
+            temp.value = value;
+            return true;
+        }
+        return false;
+
+    }
+
     public static void main(String[] args) {
         System.out.println("""
                 a single linkedList Node can be compared to a hashmap, whereas a doubly linked list Node contains a previous pointer not just next

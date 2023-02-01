@@ -317,6 +317,20 @@ public class Main {
         System.out.println("Testing get(1) for appendDLL");
         System.out.println(appendDLL.get(1).value);
 
+        System.out.println("Testing set(3) for appendDLL");
+        System.out.println(appendDLL.set(3, 333).value);
+
+        System.out.println("Make sure appendDLL printList is still showing proper nodes");
+        appendDLL.printListDLL();
+
+        System.out.println("Test bad appendDLL.set(index)");
+        appendDLL.set(23, 10);
+
+        System.out.println("Testing Instructor's method for set");
+        appendDLL.boolSet(3, 23);
+        appendDLL.printListDLL();
+
+
 
     }
 
