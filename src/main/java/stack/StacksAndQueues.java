@@ -7,6 +7,8 @@ public class StacksAndQueues {
 
     public static void main(String[] args) {
         System.out.println("""
+                //////////////////////////// Stacks ////////////////////////////
+                
                 Each item in a stack can only be accessed one at a time, with the last item entered needing to be the first to be removed. (LIFO: Last In First Out)
                 
                 You can think of it as a can of tennis balls. When you add one, you can immediately remove it from the container. But once you add another, that one you just added will have to be removed first in order to access the one before it. This is true for all subsequent stacks.
@@ -18,6 +20,21 @@ public class StacksAndQueues {
                 On the other hand, if we do this from the opposite end (the beginning), because of the re-indexing and also if we have to bring back the item, this ends up being O(n). If you use an ArrayList to implement a stack, you always want to do it from the end not the beginning.
                 
                 With a stack, we no longer use the terms "removeFirst() and prepend()" we use the terms "pop and push". Similarly, no longer "head and tail" but "top and bottom". We NEVER remove from bottom, we always remove from top.
+                
+                //////////////////////////// Stacks ////////////////////////////
+                """);
+        System.out.println("""
+                //////////////////////////// Queues ////////////////////////////
+                
+                A queue is like when people get in line. When someone is removed from the line, the first one is removed. This is called FIFO (First In First Out), which contrasts the Stack's LIFO (Last In First Out).
+                
+                When you add something to a queue, you would say you inqueued them, but removing them would be called dequeued.
+                
+                The rule for a queue is you have to inqueue and dequeue in opposite ends. If you dequeue on one end, you must inqueue on the opposite (one side will be O(1) and the other will be O(n).
+                
+                No "head and tail", now there will be "first and last".
+                
+                //////////////////////////// Queues ////////////////////////////
                 """);
     }
 }
