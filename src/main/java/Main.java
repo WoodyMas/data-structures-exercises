@@ -262,6 +262,7 @@ public class Main {
 //        myDLL.printListDLL();
 
         DoublyLinkedLists appendDLL = new DoublyLinkedLists(2);
+        DoublyLinkedLists oneNodeDLL = new DoublyLinkedLists(1);
         DoublyLinkedLists nullDLL = new DoublyLinkedLists();
 
         appendDLL.append(3);
@@ -287,6 +288,34 @@ public class Main {
 //        nullDLL.printListDLL();
 //
 //        System.out.println("End of Prepend test");
+
+        System.out.println(nullDLL.removeFirst());
+        appendDLL.append(33);
+        System.out.println();
+        appendDLL.printListDLL();
+        System.out.println("Testing remove first on appendDLL");
+        appendDLL.removeFirst();
+        appendDLL.printListDLL();
+
+        oneNodeDLL.removeFirst();
+        oneNodeDLL.printListDLL();
+
+        oneNodeDLL.append(1);
+
+        System.out.println(oneNodeDLL.removeFirst().value);
+        oneNodeDLL.printListDLL();
+        oneNodeDLL.append(1);
+        oneNodeDLL.printListDLL();
+
+        appendDLL.append(22);
+        appendDLL.append(43);
+        System.out.println();
+
+        appendDLL.printListDLL();
+        System.out.println("Testing get(3) for appendDLL");
+        System.out.println(appendDLL.get(3).value);
+        System.out.println("Testing get(1) for appendDLL");
+        System.out.println(appendDLL.get(1).value);
 
 
     }
