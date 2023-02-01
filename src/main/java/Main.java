@@ -264,6 +264,7 @@ public class Main {
         DoublyLinkedLists appendDLL = new DoublyLinkedLists(2);
         DoublyLinkedLists oneNodeDLL = new DoublyLinkedLists(1);
         DoublyLinkedLists nullDLL = new DoublyLinkedLists();
+        DoublyLinkedLists insertDLL = new DoublyLinkedLists();
 
         appendDLL.append(3);
         appendDLL.append(9);
@@ -329,6 +330,29 @@ public class Main {
         System.out.println("Testing Instructor's method for set");
         appendDLL.boolSet(3, 23);
         appendDLL.printListDLL();
+
+        System.out.println("Testing inserting into empty DLL");
+        insertDLL.insert(0, 2);
+        insertDLL.printListDLL();
+        System.out.printf(" It successfully inserted %s%n", insertDLL.get(0).value);
+
+        System.out.println("Testing inserting @ bad index");
+        insertDLL.insert(5, 3);
+        insertDLL.printListDLL();
+        System.out.printf(" insertDLL printed only %s which means it properly did not accept a bad index's value%n", insertDLL.get(0).value);
+
+        System.out.println("Testing inserting when index == length");
+        insertDLL.insert(1, 32);
+        insertDLL.printListDLL();
+        System.out.println("value properly appended as desired");
+
+        System.out.println("Testing inserting between two or more indexes");
+        insertDLL.insert(1, 55);
+        insertDLL.printListDLL();
+        System.out.println("value properly inserted between indexes");
+
+
+
 
 
 
