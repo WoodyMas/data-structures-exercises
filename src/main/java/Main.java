@@ -253,14 +253,28 @@ public class Main {
 //        newTest.reverse();
 //        newTest.printAllIndex();
 
-        DoublyLinkedLists myDLL = new DoublyLinkedLists(7);
-        System.out.println("Let's see myDLL Head, Tail and Length");
-        myDLL.getHeadPrint();
-        myDLL.getTailPrint();
-        myDLL.getLengthPrint();
+//        DoublyLinkedLists myDLL = new DoublyLinkedLists(7);
+//        System.out.println("Let's see myDLL Head, Tail and Length");
+//        myDLL.getHeadPrint();
+//        myDLL.getTailPrint();
+//        myDLL.getLengthPrint();
+//
+//        myDLL.printListDLL();
 
-        myDLL.printListDLL();
+        DoublyLinkedLists appendDLL = new DoublyLinkedLists(2);
+        DoublyLinkedLists nullDLL = new DoublyLinkedLists();
 
+        appendDLL.append(3);
+        appendDLL.append(9);
+        appendDLL.append(4);
+        appendDLL.append(33);
+        System.out.println();
+        appendDLL.printListDLL();
+        appendDLL.removeLast();
+        System.out.println();
+        appendDLL.printListDLL();
+
+        System.out.println(nullDLL.removeLast());
 
 
     }
