@@ -42,6 +42,7 @@ public class DoublyLinkedLists {
     }
 
     public void printListDLL(){
+        if (length == 0) System.out.println("No nodes to print :(");
         Node temp = head;
         while (temp != null) {
             System.out.println(temp.value);

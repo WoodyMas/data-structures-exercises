@@ -275,17 +275,18 @@ public class Main {
         appendDLL.printListDLL();
 
 //        System.out.println(nullDLL.removeLast());
-        nullDLL.prepend(3);
-        appendDLL.prepend(17);
-
-        nullDLL.printListDLL();
-        System.out.println();
-        appendDLL.printListDLL();
-
-        nullDLL.removeLast();
-        nullDLL.printListDLL();
-
-        System.out.println("End of Prepend test");
+//        nullDLL.prepend(3);
+//        appendDLL.prepend(17);
+//
+//        nullDLL.printListDLL();
+//        System.out.println(" lorem");
+//        appendDLL.printListDLL();
+//
+//        nullDLL.removeLast();
+//        System.out.println(" lorem");
+//        nullDLL.printListDLL();
+//
+//        System.out.println("End of Prepend test");
 
 
     }
