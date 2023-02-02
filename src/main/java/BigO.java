@@ -174,6 +174,8 @@ public class BigO {
                 
                 O(n * m);
                 
+                Pushing an item onto a Stack is O(1) and so is removing an item from a Queue. We commonly use ArrayLists for implementation with Stacks.
+                
                 #################################
                 #################################
                 """);
