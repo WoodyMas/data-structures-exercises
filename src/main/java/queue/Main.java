@@ -25,5 +25,23 @@ public class Main {
         System.out.println();
         nullQueue.enqueue(5);
         nullQueue.printQueue();
+
+        System.out.println(nullQueue.dequeue().value);
+        nullQueue.printQueue();
+        nullQueue.dequeue();
+        System.out.println();
+        nullQueue.enqueue(3);
+        nullQueue.enqueue(35);
+        nullQueue.enqueue(24);
+        nullQueue.printQueue();
+        System.out.println();
+        nullQueue.dequeue();
+        nullQueue.printQueue();
+        System.out.println();
+        nullQueue.dequeue();
+        nullQueue.dequeue();
+        nullQueue.printQueue();
+
+
     }
 }
