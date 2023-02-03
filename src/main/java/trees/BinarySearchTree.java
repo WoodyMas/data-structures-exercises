@@ -15,7 +15,15 @@ public class BinarySearchTree {
 
     } // Node Constructor
 
-
+    public void insert(int value){
+        // create newNode
+        // check if root == null, and if so root = newNode
+        // temp (temporary value) = root (temp equals root value)
+        // while loop (because we don't know how long this loop will need to last
+        // if newNode (which is equal to root value) == temp return false
+        // if newNode < insert left else insert right
+        // if null insert newNode else move to next
+    }
 
     public static void main(String[] args) {
         System.out.println("""
