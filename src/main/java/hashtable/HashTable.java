@@ -19,8 +19,15 @@ public class HashTable {
                 
                 We will need a way to going through all of the keys at a particular index and returning the value of a specific key
                 
+                ////////////////////////////////////////////////////
+                                Collisions
+                ////////////////////////////////////////////////////
                 
+                Separate Chaining is when you put the next key value pair at the same address even if there's already one there. (what we just talked about)
                 
+                Linear Probing is when you put an item in the next open spot (index) instead of loading multiple into the same address. It is one of the types of open addressing. This and Separate Chaining is one of the most common ways to deal with collisions.
+                
+                We will use Separate Chaining, by creating a linked list at each index where multiple keys are stored in a same address
                 
                 """);
     }
