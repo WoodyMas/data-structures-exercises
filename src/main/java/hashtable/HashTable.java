@@ -63,6 +63,18 @@ public class HashTable {
         }
     }
 
+    public int get(String key) {
+      // we intend to return the index of a specified key
+      int index = hash(key);
+      Node temp = dataMap[index];
+      while (temp != null) {
+          if (temp.key == key) return temp.value;
+          temp = temp.next;
+      }
+      System.out.println("Not found");
+      return 0;
+    }
+
     public static void main(String[] args) {
         System.out.println("""
                 We'll create an array with key valued pairs

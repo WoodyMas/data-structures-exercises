@@ -7,6 +7,7 @@ public class Main {
         HashTable myHashTable = new HashTable();
 
         myHashTable.printTable();
+        System.out.println("\n");
 
         myHashTable.set("nails", 100);
         myHashTable.set("tile", 50);
@@ -16,6 +17,14 @@ public class Main {
         myHashTable.set("screws", 140);
 
         myHashTable.printTable();
+        System.out.println("\n");
+
+        System.out.println(myHashTable.get("screws"));
+        System.out.println(myHashTable.get("nails"));
+        System.out.println(myHashTable.get("tile"));
+        System.out.println(myHashTable.get("lumber"));
+
+        System.out.println(myHashTable.get("wrong key"));
 
     }
 }
