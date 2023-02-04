@@ -2,7 +2,7 @@ package trees;
 
 public class BinarySearchTree {
     //// instance variables
-    Node root;
+    public Node root;
 
     class Node {
         int value;
@@ -15,15 +15,42 @@ public class BinarySearchTree {
 
     } // Node Constructor
 
-    public void insert(int value){
+    public boolean insert(int value){
         // create newNode
+        Node newNode = new Node(value);
         // check if root == null, and if so root = newNode
+        if (root == null) {
+            root = newNode;
+            return true;
+        }
         // temp (temporary value) = root (temp equals root value)
+        Node temp = root;
         // while loop (because we don't know how long this loop will need to last
-        // if newNode (which is equal to root value) == temp return false
+        while (true) {
+            // if newNode (which is equal to root value) == temp return false
+            if (newNode.value == temp.value) {
+                System.out.println("Entered value may already be in this Binary Search Tree");
+                return false;
+            }
+                if (newNode.value < temp.value) {
+                    if (temp.left == null) {
+                        temp.left = newNode;
+                        return true;
+                    }
+                    temp = temp.left;
+                } else {
+                    if (temp.right == null) {
+                        temp.right = newNode;
+                        return true;
+                    }
+                    temp = temp.right;
+                }
+            }
+        }
+
         // if newNode < insert left else insert right
         // if null insert newNode else move to next
-    }
+
 
     public static void main(String[] args) {
         System.out.println("""
