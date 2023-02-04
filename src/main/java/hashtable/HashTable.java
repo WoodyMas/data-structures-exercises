@@ -33,6 +33,20 @@ public class HashTable {
         }
     }
 
+    // private because hash method will only be used by other methods in the HashTable class
+    private int hash(String key) {
+        // hash int will be declared & initialized @ 0
+        int hash = 0;
+
+        char[] keyChars = key.toCharArray();
+        for (int i = 0; i < keyChars.length; i++) {
+            int asciiValue = keyChars[i];
+            // we'll multiply by a prime number so that it's more random
+            hash = (hash + asciiValue * 23) % dataMap.length;
+        }
+        return hash;
+    }
+
     public static void main(String[] args) {
         System.out.println("""
                 We'll create an array with key valued pairs
