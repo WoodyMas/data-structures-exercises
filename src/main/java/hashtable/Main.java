@@ -26,5 +26,10 @@ public class Main {
 
         System.out.println(myHashTable.get("wrong key"));
 
+        System.out.println("Testing keys() method\n");
+        myHashTable.set("paint", 20);
+//        myHashTable.set("Linoleum", 65);
+        System.out.println(myHashTable.keys());
+
     }
 }

@@ -2,6 +2,8 @@ package hashtable;
 
 import stack.Node;
 
+import java.util.ArrayList;
+
 public class HashTable {
 
     public int size = 7;
@@ -73,6 +75,18 @@ public class HashTable {
       }
       System.out.println("Not found");
       return 0;
+    }
+
+    public ArrayList keys() {
+        ArrayList<String> allKeys = new ArrayList<>();
+        for (int i = 0; i < dataMap.length; i++) {
+            Node temp = dataMap[i];
+            while (temp != null) {
+                allKeys.add(temp.key);
+                temp = temp.next;
+            }
+        }
+        return allKeys;
     }
 
     public static void main(String[] args) {
