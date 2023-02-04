@@ -3,6 +3,7 @@ package hashtable;
 import stack.Node;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class HashTable {
 
@@ -89,6 +90,27 @@ public class HashTable {
         return allKeys;
     }
 
+    // Inefficient solution using nested loops: O(n^2)
+    public static boolean itemInCommonIneff (int[] array1, int[] array2) {
+        for (int i : array1) {
+            for (int j : array2){
+                if (i == j) return true;
+            }
+        }
+        return false;
+    }
+
+    public static boolean itemInCommonON(int[] arr1, int[] arr2) {
+        HashMap<Integer, Boolean> myHashMap = new HashMap<>();
+        for (int i : arr1) {
+            myHashMap.put(i, true);
+        }
+        for (int j : arr2) {
+            if (myHashMap.get(j) != null) return true;
+        }
+        return false;
+    }
+
     public static void main(String[] args) {
         System.out.println("""
                 We'll create an array with key valued pairs
@@ -117,6 +139,17 @@ public class HashTable {
                 We will use Separate Chaining, by creating a linked list at each index where multiple keys are stored in a same address
                 
                 If our address space has a prime number of addresses, we will deal with less collisions
+                
+                ////////////////////////////////////////////////////
+                                Big O
+                ////////////////////////////////////////////////////
+                
+                Because this method has to be run everytime we add or get a method, we have to determine the Big O. The hash method alone is O(1) because it'll go through the same number of operations to determine a hash regardless of the number of items that are already in the hash table;
+                
+                if we set an item, we run it through the hash method and it gives us an index. Adding that would be considered O(1). 
+                
+                if we have to get an item that has a large address space with randomized item placement, we treat getting and setting an item as O(1).
+                
                 
                 """);
     }
