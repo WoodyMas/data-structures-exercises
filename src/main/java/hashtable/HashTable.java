@@ -1,6 +1,37 @@
 package hashtable;
 
+import stack.Node;
+
 public class HashTable {
+
+    public int size = 7;
+    private Node[] dataMap;
+
+    public HashTable() {
+        dataMap = new  Node[size];
+    }
+
+    class Node {
+        private String key;
+        private int value;
+        private Node next;
+
+        public Node(String key, int value) {
+            this.key = key;
+            this.value = value;
+        }
+    }
+
+    public void printTable() {
+        for (int i= 0; i < dataMap.length; i++) {
+            System.out.println(i + ":");
+            Node temp = dataMap[i];
+            while (temp != null) {
+                System.out.printf("%n {%s= '%d'}%n", temp.key, temp.value);
+                temp = temp.next;
+            }
+        }
+    }
 
     public static void main(String[] args) {
         System.out.println("""
@@ -28,6 +59,8 @@ public class HashTable {
                 Linear Probing is when you put an item in the next open spot (index) instead of loading multiple into the same address. It is one of the types of open addressing. This and Separate Chaining is one of the most common ways to deal with collisions.
                 
                 We will use Separate Chaining, by creating a linked list at each index where multiple keys are stored in a same address
+                
+                If our address space has a prime number of addresses, we will deal with less collisions
                 
                 """);
     }
