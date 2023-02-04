@@ -18,6 +18,15 @@ public class Main {
         System.out.println("Root = " + (myBST.root.left).value);
         System.out.println("Root = " + (myBST.root.right.right).value);
 
+        System.out.println("Test contains method");
+
+        System.out.println(myBST.contains(45));
+        System.out.println(myBST.contains(48));
+        System.out.println(myBST.contains(32));
+        System.out.println(myBST.contains(33));
+
+
+
 
     } // end main method
 } // End Main Class

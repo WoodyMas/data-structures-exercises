@@ -32,25 +32,85 @@ public class BinarySearchTree {
                 System.out.println("Entered value may already be in this Binary Search Tree");
                 return false;
             }
+                // If newNode is less than temp
                 if (newNode.value < temp.value) {
+                    // Check if temp left is null or not. if it is:
                     if (temp.left == null) {
+                        // left pointer assigned to newNode value
                         temp.left = newNode;
+                        // return true because a successful insertion is possible
                         return true;
                     }
+                    // temp takes the value of temp.left
                     temp = temp.left;
                 } else {
+                    // if temp is greater than newNode
+                    // Check if temp.right is null
                     if (temp.right == null) {
+                        // temp.right takes newNode's value
                         temp.right = newNode;
+                        // return true because a successful insertion is possible
                         return true;
                     }
+                    // temp is assigned to temp.right's value
                     temp = temp.right;
                 }
             }
         }
 
-        // if newNode < insert left else insert right
-        // if null insert newNode else move to next
+        // Contains method
+        // look for a number in a tree
+        // return true if it's in tree
+        // return false if it's not in tree
 
+//    public boolean containsMW(int value) {
+//        if (root == null) {
+//            System.out.println("No value present in tree");
+//            return false;
+//        } else {
+//            Node newNode = new Node(value);
+//            Node temp = root;
+//            // Check if root value is equal to inserted value
+//            if (temp.value == newNode.value) {
+//                System.out.println("Contained at root");
+//                return true;
+//            }
+//            // Check to see if temp (root) is greater than input
+//            if (temp.value > newNode.value) {
+//                // This will be the condition used to evaluate left side
+//                // This will be more complicated than I thought.
+//            }
+//        }
+//
+//    }
+
+    // See if a number is contained in a tree. If it is, return true, otherwise return false
+    // if root == null return false
+    // create a temp variable: temp = root
+    // use a while loop to move through the tree
+    // if input is less than a node value, move left.
+    // if compared node value is null, we break out of the loop by returning false
+    // while (temp != null)
+
+    public boolean contains(int value){
+//        if (root == null) {
+//            System.out.println("No values in tree");
+//            return false;
+//        }
+        Node temp = root;
+        while (temp!= null){
+            if (value < temp.value) {
+                temp = temp.left;
+            } else if (value > temp.value) {
+                temp = temp.right;
+            } else {
+                System.out.printf("%n%s is contained in this BST: ", value);
+                return true;
+            }
+        }
+        System.out.printf("%n%s is contained in this BST: ", value);
+        return false;
+    }
 
     public static void main(String[] args) {
         System.out.println("""
