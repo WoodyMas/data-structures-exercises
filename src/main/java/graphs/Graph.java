@@ -43,6 +43,19 @@ public class Graph {
         return false;
     }
 
+    // to remove vertex we must first remove all relevant edges
+    public boolean removeVertex(String vertex) {
+        if (adjList.get(vertex) == null) {
+            System.out.printf("Vertex specified: %s isn't present%n", vertex);
+            return false;
+        }
+        for (String otherVertex : adjList.get(vertex)) {
+            adjList.get(otherVertex).remove(vertex);
+        }
+        adjList.remove(vertex);
+        return true;
+    }
+
     public static void main(String[] args) {
         System.out.println("""
                 We call nodes vertex/vertices in graphs (but you may hear people call them nodes).

@@ -35,5 +35,13 @@ public class Main {
         System.out.println(myGraph.removeEdge("C", "Zed"));
         myGraph.printGraph();
 
+        System.out.println("Testing Remove Vertex");
+
+        System.out.println(myGraph.removeVertex("B"));
+
+        myGraph.printGraph();
+        System.out.println(myGraph.removeVertex("E"));
+        myGraph.printGraph();
+
     }
 }
