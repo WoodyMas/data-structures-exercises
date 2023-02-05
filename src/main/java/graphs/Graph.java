@@ -52,6 +52,83 @@ public class Graph {
                     "E"=["A","D"]
                 }
                 
+                //////////////////////////////////////////////////
+                        Graph BigO
+                //////////////////////////////////////////////////
+                
+                For big O, let's look first at SPACE COMPLEXITY.
+                
+                With the vertex A for an adjacency list, we will store the vertex and each one of the edges.
+                With an adjacency matrix, we have to store the edges and we also have to store everything it is NOT connected to.
+                
+                The adjacency list has an advantage over the matrix for space complexity.
+                
+                Adjacency Matrix = O(|V|^2) O of the # of vertices squared
+                Adjacency List = O(|V| + |E|) # of vertices + # of edges
+                
+                If we want to add a vertex to the graph (not adding an edge yet):
+                    adding vertex "F"
+                {
+                    "A"=["B","E"],
+                    "B"=["A","C"],
+                    "C"=["B","D"],
+                    "D"=["C","E"],
+                    "E"=["A","D"],
+                    "F"=[]
+                }
+                
+                with the adjacency matrix, we have to create new arrays to store into a 2-dimensional array which is very inefficient
+                
+                For a bigO perspective, 
+                    the adjacency matrix is the # of vertices squared every time you add a vertex O(|V|^2)
+                    the adjacency list is O(1) to add a vertex
+                    
+                Let's add an edge from B to F in our old graph
+                
+                    adding edge "F" to "B"
+                {
+                    "A"=["B","E"],
+                    "B"=["A","C", "F"], <-- F is added to B
+                    "C"=["B","D"],
+                    "D"=["C","E"],
+                    "E"=["A","D"],
+                    "F"=["B"] <-- B is added to F
+                }
+                
+                With the adjacency Matrix, we just change the 0 to a 1 for both the B:F and F:B.
+                Both Matrix and List are O(1) to add an edge
+                
+                Let's see about removing F and B edge:
+                
+                {
+                    "A"=["B","E"],
+                    "B"=["A","C"], <-- Finding a key in a hash map is O(1), but we have to iterate through the entire arraylist to remove F
+                    "C"=["B","D"],
+                    "D"=["C","E"],
+                    "E"=["A","D"],
+                    "F"=["B"] <-- We do the same process for F, finding it with key O(1) and iterating through the arraylist to find "B" and removing it
+                }
+                
+                For an adjacency matrix, we just change the 1 from B:F to a 0 and do the same for F:B
+                
+                The adjacency matrix therefore, outperforms the adjacency list
+                    
+                    matrix: O(1) 
+                    
+                    the list must iterate through the entire arraylist, and a particular vertex may have 1000 edges.
+                    list: O(|E|)
+                    
+                    every vertex and every edge will have to be scrutinized in order to remove a specific vertex with the adjacency list
+                    
+                    with a matrix, we remove the axis but have to rewrite the arrays.
+                    
+                    both are quite inefficient
+                        Matrix: O(|V|^2)
+                        List: 0(|V| + |E|)
+                        
+                    In this course we will use an adjacency list rather than a matrix because matrices require the 1s AND the 0s we are not connected to. If we have a large graph, this becomes VERY inefficient.
+                    
+                    let's say FB has 1Billion active users. You would have a graph that would be 1B items across, and 1B items down. Even if each of the users had 1000 friends, you would have 1Million 0s for every individual. This is why we will use an adjacency list for this course.
                 
                 
                 """);
