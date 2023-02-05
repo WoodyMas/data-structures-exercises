@@ -21,5 +21,19 @@ public class Main {
 
         myGraph.printGraph();
 
+        myGraph.removeEdge("B", "C");
+        myGraph.printGraph();
+        myGraph.addEdge("B", "C");
+        myGraph.addEdge("A", "C");
+        myGraph.addEdge("A", "C");
+
+        myGraph.printGraph();
+        myGraph.removeEdge("A", "C");
+        myGraph.removeEdge("C", "A");
+        System.out.println(myGraph.removeEdge("C", "A"));
+        System.out.println(myGraph.removeEdge("C", "A"));
+        System.out.println(myGraph.removeEdge("C", "Zed"));
+        myGraph.printGraph();
+
     }
 }

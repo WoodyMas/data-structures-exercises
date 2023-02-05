@@ -33,6 +33,16 @@ public class Graph {
         return false;
     }
 
+    public boolean removeEdge(String vertex1, String vertex2) {
+        if (adjList.get(vertex1) != null && adjList.get(vertex2) != null){
+            adjList.get(vertex1).remove(vertex2);
+            adjList.get(vertex2).remove(vertex1);
+            return true;
+        }
+        System.out.println("Vertices specified may not exist");
+        return false;
+    }
+
     public static void main(String[] args) {
         System.out.println("""
                 We call nodes vertex/vertices in graphs (but you may hear people call them nodes).
