@@ -22,6 +22,17 @@ public class Graph {
         System.out.println(adjList);
     }
 
+    public boolean addEdge(String vertex1, String vertex2) {
+        if (adjList.get(vertex1) != null && adjList.get(vertex2) !=null) {
+
+        adjList.get(vertex1).add(vertex2);
+        adjList.get(vertex2).add(vertex1);
+        System.out.printf("Edge successfully added between %s and %s!%n", vertex1, vertex2);
+        return true;
+        }
+        return false;
+    }
+
     public static void main(String[] args) {
         System.out.println("""
                 We call nodes vertex/vertices in graphs (but you may hear people call them nodes).

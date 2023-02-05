@@ -13,5 +13,13 @@ public class Main {
 
         myGraph.printGraph();
 
+        System.out.println("Testing adding edge between AB, CB, and CE (false)");
+
+        System.out.println(myGraph.addEdge("A", "B"));
+        System.out.println(myGraph.addEdge("C", "B"));
+        System.out.println(myGraph.addEdge("C", "e"));
+
+        myGraph.printGraph();
+
     }
 }
