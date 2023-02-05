@@ -35,6 +35,25 @@ public class Graph {
                 
                 For example, if an edge is weighted from Vertex A to Vertex B with a value of 15 (bidirectionally), then A- B and B- A will have the value 15 in the matrix as opposed to 1.
                 
+                //////////////////////////////////////////////////
+                        Adjacency List
+                //////////////////////////////////////////////////
+                
+                An adjacency list is another way of representing a graph. We use a hashmap to represent this. 
+                
+                Where a vertex has an edge with another vertex, we will represent these as a key value pair:
+                    for example:
+                    
+                {
+                    "A"=["B","E"],
+                    "B"=["A","C"],
+                    "C"=["B","D"],
+                    "D"=["C","E"],
+                    "E"=["A","D"]
+                }
+                
+                
+                
                 """);
     }
 }
