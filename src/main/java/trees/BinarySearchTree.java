@@ -144,10 +144,27 @@ public class BinarySearchTree {
         } else {
             return rContains(currentNode.right, value);
         }
-
-
     }
 
+    private Node deleteNode(Node currentNode, int value) {
+        if (currentNode == null) return null;
+        if (value < currentNode.value) {
+            currentNode.left = deleteNode(currentNode.left, value);
+        }
+        else if (value > currentNode.value) {
+            currentNode.right = deleteNode(currentNode.right, value);
+        } else {
+            // either the node we are trying to delete is a leaf node,
+            // or it has a node on the right but not on the left
+            // or it has a node on the left but not the right
+            // or it has a node on each side
+        }
+        return currentNode;
+    }
+
+    public void deleteNode(int value){
+        deleteNode(root, value);
+    }
 
 
     public static void main(String[] args) {
@@ -184,7 +201,19 @@ public class BinarySearchTree {
                 When constructing a BST, every node needs something pointing to it or it'll be garbage collected. When we had the Linked list, we used the instance property "head" to point to the first node. We'll do something similar but instead of calling it "head" we'll call it "root"
                 
                 
+                //////////////////////////////////////////////////////////////////
+                                                Delete
+                //////////////////////////////////////////////////////////////////
                 
+                There are two parts to this:
+                
+                We must start at the root and then traverse to the node that must be deleted (must be able to traverse through the tree)
+                
+                Once we find it we must be able to delete it. In this solution, deleting the leaf node (a node with no child) is the simplest solution
+                
+                But in the event where we need to delete a node with children, it will simply require reconfiguring the parent node's pointers to the first child of the soon to be deleted node.
+                
+                Things get more complicated if the to be deleted node has multiple sub-trees. We will find the node with the lowest value in the descending tree, and we will copy the value into the existing (parent) node. When we have the copy, we will delete the original node, and the root of that subtree will be valid.
                 
                 """);
     }
