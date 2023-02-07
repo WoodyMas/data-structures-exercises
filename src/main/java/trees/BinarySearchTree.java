@@ -165,6 +165,11 @@ public class BinarySearchTree {
                 currentNode = currentNode.left;
             }
             // or it has a node on each side
+            else {
+                int subTreeMin = minValue(currentNode.right);
+                currentNode.value = subTreeMin;
+                currentNode.right = deleteNode(currentNode.right, subTreeMin);
+            }
         }
         return currentNode;
     }

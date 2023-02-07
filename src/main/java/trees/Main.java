@@ -58,6 +58,11 @@ public class Main {
         System.out.println(myBST.minValue(myMinBST.root));
         System.out.println(myBST.minValue(myMinBST.root.right));
 
+        System.out.println("See if deleting a non-existent node does anything");
+        myMinBST.deleteNode(12);
+        System.out.println("delete right node (43)");
+        myMinBST.deleteNode(43);
+        System.out.println(myMinBST.root.right.value);
 
     } // end main method
 } // End Main Class
