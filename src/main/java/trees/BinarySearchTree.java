@@ -155,8 +155,15 @@ public class BinarySearchTree {
             currentNode.right = deleteNode(currentNode.right, value);
         } else {
             // either the node we are trying to delete is a leaf node,
+            if (currentNode.left == null && currentNode.right == null) {
+                return null;
             // or it has a node on the right but not on the left
+            } else if (currentNode.left == null) {
+                currentNode = currentNode.right;
             // or it has a node on the left but not the right
+            } else if (currentNode.right == null) {
+                currentNode = currentNode.left;
+            }
             // or it has a node on each side
         }
         return currentNode;
