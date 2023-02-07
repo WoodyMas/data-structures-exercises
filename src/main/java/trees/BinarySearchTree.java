@@ -169,6 +169,16 @@ public class BinarySearchTree {
         return currentNode;
     }
 
+    // find minimum value
+    // will always traverse left until null is found
+    // Even if we need to find min val for another node in the right
+    public int minValue(Node currentNode) {
+        while (currentNode.left != null) {
+            currentNode = currentNode.left;
+        }
+        return currentNode.value;
+    }
+
     public void deleteNode(int value){
         deleteNode(root, value);
     }

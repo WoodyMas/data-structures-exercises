@@ -47,6 +47,17 @@ public class Main {
         System.out.println(myRBST.root.right.value);
 //        System.out.println(myRBST.root.right.value);
 
+        System.out.println("Find minimum value for myMinBST root & root.right");
+        BinarySearchTree myMinBST = new BinarySearchTree();
+
+        myMinBST.rInsert(23);
+        myMinBST.rInsert(43);
+        myMinBST.rInsert(57);
+        myMinBST.rInsert(9);
+
+        System.out.println(myBST.minValue(myMinBST.root));
+        System.out.println(myBST.minValue(myMinBST.root.right));
+
 
     } // end main method
 } // End Main Class
