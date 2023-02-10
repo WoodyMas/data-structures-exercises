@@ -4,6 +4,16 @@ import java.util.Arrays;
 
 public class Main {
 
+    public static int[] twoSum (int[] nums, int target) {
+        int[] newArr = {2};
+        for (int i = 0; i < nums.length; i++) {
+//            System.out.println(target + " - " + i + "" + (target - nums[i]));
+            System.out.printf("%s - %s: %d%n", target, nums[i], (target-nums[i]));
+
+        }
+        return newArr;
+    }
+
     public static void main(String[] args) {
 
 
@@ -34,6 +44,11 @@ public class Main {
         System.out.println(Arrays.toString(myArr2));
         System.out.println(Arrays.toString(MergeSort.mergeSort(myArr2)));
         System.out.println(Arrays.toString(myArr2));
+
+        int[] test = {1, 3, 4, 5};
+        Main.twoSum(test, 9);
+        System.out.println();
+        System.out.println(Arrays.toString(Main.twoSum(test, 9)));
 
 
     }
