@@ -1,8 +1,47 @@
 package algorithms.sorts;
 
+import java.util.Arrays;
+
 public class QuickSort {
+    private static void swap(int[] array, int firstIndex, int secondIndex) {
+        // storing temporary value of array's first index
+        int temp = array[firstIndex];
+        // changing array's first index to value of second index
+        array[firstIndex] = array[secondIndex];
+        // changing array's second index to temp (which was array's original first index value)
+        array[secondIndex] = temp;
+
+        // this method will be used to swap items in arrays. We haven't yet added any specification for it to swap based on sorting. This will likely be later defined in a separate method that calls on this one
+    }
+
+    private static int pivot(int[] array, int pivotIndex, int endIndex) {
+        // we will be dealing with the index not the value of the index.
+        int swapIndex = pivotIndex;
+        // this loop starts after the pivotIndex and continues until it reaches the end of the array
+        for (int i = pivotIndex+1; i <= endIndex; i++) {
+            // this will check if the evaluated index's value is less than pivotIndex's value
+            if (array[i] < array[pivotIndex]) {
+                swapIndex++;
+                // we call on the previous method swap AFTER the swapIndex has incremented
+                // swap takes the array and takes a "firstIndex", in this case it is our incremented swapIndex, and switches places with the second index (i)
+                swap(array, swapIndex, i);
+            }
+        }
+        swap(array, pivotIndex, swapIndex);
+        // Again, we are returning an index NOT the value of an index
+        return swapIndex;
+    }
 
     public static void main(String[] args) {
+        int[] myArr = {1, 34, 44, 26, 52, 35, 12, 77};
+        System.out.println("Original arr");
+        System.out.println(Arrays.toString(myArr));
+        System.out.println(pivot(myArr, 0, myArr.length-1));
+        System.out.println(Arrays.toString(myArr));
+        System.out.println("Pivot index 0 is sorted above.");
+        System.out.println(pivot(myArr, 4, myArr.length-1));
+        System.out.println(Arrays.toString(myArr));
+
         System.out.println("""
                 When quick sorting an array, you have a pivot point (we'll use the first item), and we'll compare every item in the array to the pivot point.
                                 
