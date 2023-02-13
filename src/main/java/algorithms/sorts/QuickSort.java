@@ -17,7 +17,7 @@ public class QuickSort {
                                 
                 the pivot function will take an item, will sort each item until the pivot is in its sorted position
                                 
-                Quick sort is a popular sorting algorithm that follows the divide-and-conquer approach. It works by selecting a "pivot" element from the array and partitioning the other elements into two sub-arrays, according to whether they are less than or greater than the pivot. The sub-arrays are then recursively sorted.
+                Quick sort follows the divide-and-conquer approach. It works by selecting a "pivot" element from the array and partitioning the other elements into two sub-arrays, according to whether they are less than or greater than the pivot. The sub-arrays are then recursively sorted.
                                 
                 Here are the steps for Quick sort:
                                 
@@ -32,6 +32,8 @@ public class QuickSort {
                 Finally, the sub-arrays are combined to form the final sorted array.
                                 
                 Quick sort has an average case time complexity of O(nlogn), which is generally faster than other commonly used sorting algorithms such as bubble sort, insertion sort, and selection sort. However, in the worst case scenario, the time complexity can be O(n^2), which can make it slower than some other algorithms.
+                            
+                
                                 
                 """);
     }
