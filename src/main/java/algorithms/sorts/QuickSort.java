@@ -3,7 +3,8 @@ package algorithms.sorts;
 import java.util.Arrays;
 
 public class QuickSort {
-    private static void swap(int[] array, int firstIndex, int secondIndex) {
+    // be sure to CHANGE BACK TO PRIVATE
+    public static void swap(int[] array, int firstIndex, int secondIndex) {
         // storing temporary value of array's first index
         int temp = array[firstIndex];
         // changing array's first index to value of second index
@@ -14,7 +15,8 @@ public class QuickSort {
         // this method will be used to swap items in arrays. We haven't yet added any specification for it to swap based on sorting. This will likely be later defined in a separate method that calls on this one
     }
 
-    private static int pivot(int[] array, int pivotIndex, int endIndex) {
+    // be sure to CHANGE BACK TO PRIVATE
+    public static int pivot(int[] array, int pivotIndex, int endIndex) {
         // we will be dealing with the index not the value of the index.
         int swapIndex = pivotIndex;
         // this loop starts after the pivotIndex and continues until it reaches the end of the array
